@@ -5,6 +5,7 @@ import './App.css'
 import Home from './page/Home'
 import Navbar from './components/Navbar'
 import Show from './components/Show'
+import Detail from './components/Detail'
 
 function App() {
     const [count, setCount] = useState(0)
@@ -15,6 +16,7 @@ function App() {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/show/:episode' element={<Show />} />
+                <Route path='/anime/:id' element={<Detail />} />
             </Routes>
         </>
     )

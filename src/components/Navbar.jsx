@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { Switch } from '@headlessui/react'
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 const Navbar = () => {
     const [enabled, setEnabled] = useState(false)
 
     return (
-        <div className='text-white bg-black flex items-center px-10 py-3 justify-between'>
-            <div className='text-yellow-500 font-bold text-2xl'><Link to="/">Oploverz</Link></div>
+        <div className='text-white bg-black flex items-center px-4 md:px-10 py-3 justify-between w-full'>
+            <div className='text-yellow-500 font-bold text-2xl'>
+                <Link to='/'>Oploverz</Link>
+            </div>
             <div className='text-yellow-500 font-bold text-2xl'>
                 <div className='hidden relative text-gray-400 focus-within:text-gray-400'>
                     <span className='absolute inset-y-0 left-0 flex items-center pl-2'>
