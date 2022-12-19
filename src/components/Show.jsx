@@ -159,12 +159,7 @@ const Show = () => {
                         </div>
                     </Listbox>
                 </div>
-                {selected}
-                {!isLoading &&
-                    latest.map((embed, i) => {
-                        return <h1 className='text-white'>oke</h1>
-                    })}
-                {!isLoading && console.log(latest[0].id)}
+ 
             </div>
             <div className='p-4 mt-24 rounded bg-slate-700 w-full max-w-5xl mx-auto'>
                 <h2 className='text-white'>
