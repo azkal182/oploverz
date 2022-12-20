@@ -61,7 +61,7 @@ const Show = () => {
   // console.log(params)
   if (isLoading) {
     return (
-      <div className="grid h-screen place-items-center">
+      <div className="absolute inset-0 grid h-screen place-items-center">
         <div className="flex items-center">
           <div className="w-24 h-24 border-t-4 border-b-4 border-red-900 rounded-full animate-spin"></div>
         </div>
@@ -145,17 +145,24 @@ const Show = () => {
         <div className="my-4 grid grid-cols-3 gap-x-1 mx-4 w-full max-w-5xl md:mx-auto">
           <Link to={`/show/${prev}`}>
             <button
+              onClick={() => {
+                setIsLoading(true);
+              }}
               disabled={!prev && true}
               className="bg-slate-700 flex justify-center items-center text-white py-2 text-center w-full"
             >
               <HiChevronLeft size={16} />
             </button>
           </Link>
-          <button className="bg-blue-600 text-white py-2 flex justify-center items-center text-center w-full">
+          <button
+            onClick={() => {setIsLoading(true)}}
+            className="bg-blue-600 text-white py-2 flex justify-center items-center text-center w-full"
+          >
             <HiListBullet size={20} />
           </button>
           <Link to={`/show/${next}`}>
             <button
+               onClick={() => {setIsLoading(true)}}
               disabled={!next && true}
               className="bg-slate-700 flex justify-center items-center text-white py-2 text-center w-full"
             >
