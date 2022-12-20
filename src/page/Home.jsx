@@ -31,15 +31,15 @@ const Home = () => {
     return (
       <div className="grid h-screen place-items-center">
         <div className="flex items-center">
-          <div className="w-24 h-24 border-t-4 border-b-4 border-red-900 rounded-full animate-spin"></div>
+          <div className="w-24 h-24 border-t-4 border-b-4 border-slate-900 dark:border-red-900 rounded-full animate-spin"></div>
         </div>
       </div>
     );
   } else {
     return (
       <div className="mx-3">
-        <div className="w-full max-w-5xl md:mx-auto mt-8">
-          <div className="w-full bg-slate-600 rounded-md overflow-hidden">
+        <div className="w-full max-w-5xl md:mx-auto mt-8 shadow">
+          <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-md overflow-hidden">
             <div className="w-full px-4 bg-red-600 text-white">
               <h2 className="font-semibold text-lg py-1">Popular Today</h2>
             </div>
@@ -56,7 +56,7 @@ const Home = () => {
                         />
                       </Link>
                     </div>
-                    <div className="absolute w-full bottom-0 py-1 bg-slate-700 px-3">
+                    <div className="absolute w-full bottom-0 py-1 bg-slate-800/95 px-3">
                       <div className="text-white py-1">{item.title}</div>
                       <div className="flex items-center justify-between py-1">
                         <div className="type text-green-500">{item.type}</div>
@@ -71,15 +71,15 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="w-full max-w-5xl md:mx-auto mt-8">
-          <div className="w-full bg-slate-600 rounded-md overflow-hidden">
+        <div className="w-full max-w-5xl md:mx-auto mt-8 shadow">
+          <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-md overflow-hidden">
             <div className="w-full px-4 bg-blue-600 text-white">
-              <h2 className="font-semibold text-lg py-1">latest Update</h2>
+              <h2 className="font-semibold text-lg py-1">Latest Update</h2>
             </div>
-            <div className="px-4 py-4 grid gap-4 grid-cols-1 relative">
+            <div className="px-4 py-4 grid gap-4 grid-cols-1 relative divide-y divide-slate-300 dark:divide-slate-500">
               {latest.map((item, index) => {
                 return (
-                  <div key={index} className="flex items-center ">
+                  <div key={index} className="flex items-center">
                     <div className="w-28 relative">
                       <Link to={`show/${item.id}`}>
                         <img src={item.poster} alt={item.title} />
@@ -88,10 +88,10 @@ const Home = () => {
                         {item.type}
                       </div>
                       <div className="pt-10 absolute w-full bottom-0 bg-gradient-to-t from-black text-center text-white">
-                        Episode {item.episode}
+                        Eps {item.episode}
                       </div>
                     </div>
-                    <div className="text-white ml-4 w-[75%]">
+                    <div className="text-slate-900 dark:text-white ml-4 w-[75%]">
                       <Link to={`show/${item.id}`}>
                         <h2 className="font-semibold text-md ">{item.title}</h2>
                       </Link>

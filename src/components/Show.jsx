@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { Listbox, Transition } from "@headlessui/react";
+import Footer from "../components/Footer";
 // import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 
 import {
@@ -63,12 +64,13 @@ const Show = () => {
     return (
       <div className="absolute inset-0 grid h-screen  place-items-center">
         <div className="flex items-center">
-          <div className="w-24 h-24 border-t-4 border-b-4 border-red-900 rounded-full animate-spin"></div>
+          <div className="w-24 h-24 border-t-4 border-b-4 border-slate-900 dark:border-red-900 rounded-full animate-spin"></div>
         </div>
       </div>
     );
   } else {
     return (
+      <div>
       <div className="mx-3">
         <div className="text-center">
           <h2 className="font-semibold text-red-500">
@@ -174,8 +176,8 @@ const Show = () => {
             </button>
           </Link>
         </div>
-        <div className="p-2 md:p-4 mt-4 rounded bg-slate-700 w-full md:max-w-5xl md:mx-auto">
-          <h2 className="text-white w-full text-center">
+        <div className="p-2 md:p-4 mt-4 rounded shadow bg-slate-100 dark:bg-slate-700 w-full md:max-w-5xl md:mx-auto">
+          <h2 className="text-slate-900 dark:text-slate-100 w-full text-center font-semibold">
             Download {params.episode.replaceAll("-", " ")}
           </h2>
 
@@ -186,14 +188,14 @@ const Show = () => {
                   <h1 className="w-full bg-blue-600 px-2 py-1 rounded text-white">
                     {download.format}
                   </h1>
-                  <div className="flex flex-col gap-y-2 mt-2 text-white">
+                  <div className="flex flex-col gap-y-2 mt-2 text-slate-900 dark:text-white ">
                     {download.resolutions.map((resolution, i) => {
                       return (
                         <div key={i} className="flex items-center gap-x-2">
-                          <div className="bg-blue-600 w-14 text-center py-1 rounded">
+                          <div className="bg-blue-600 w-14 text-center p-1 rounded text-white">
                             {resolution.name}
                           </div>
-                          <div className="flex flex-wrap items-center divide-x gap-2">
+                          <div className="flex flex-wrap items-center divide-x gap-2 divide-slate-300 dark:divide-slate-500">
                             {resolution.servers.map((server, i) => {
                               return (
                                 <div key={i} className="text-center pl-2">
@@ -213,6 +215,8 @@ const Show = () => {
             })}
           </div>
         </div>
+      </div>
+        <Footer />
       </div>
     );
   }

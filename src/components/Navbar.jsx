@@ -6,12 +6,13 @@ const Navbar = () => {
   const [enabled, setEnabled] = useState(false);
 
   return (
-    <div className="text-white bg-black flex items-center px-4 md:px-10 py-3 justify-between w-full">
-      <div className="text-yellow-500 font-bold text-2xl">
-        <Link to="/">Oploverz</Link>
+    <div className="text-white bg-blue-900 flex items-center px-4 md:px-10 py-3 justify-between w-full">
+      <div className="text-yellow-300 font-bold text-2xl">
+        <Link to="/">OPZ</Link>
       </div>
-      <div className="text-yellow-500 font-bold text-2xl">
-        <div className="hidden relative text-gray-400 focus-within:text-gray-400">
+
+      <div className="text-yellow-500 font-bold text-2xl ">
+        <div className="relative text-gray-600 focus-within:text-gray-400">
           <span className="absolute inset-y-0 left-0 flex items-center pl-2">
             <button
               type="submit"
@@ -24,7 +25,7 @@ const Navbar = () => {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 viewBox="0 0 24 24"
-                className="w-6 h-6"
+                className="w-4 md:w-6 h-4 md:h-6"
               >
                 <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
@@ -33,14 +34,14 @@ const Navbar = () => {
           <input
             type="search"
             name="q"
-            className="py-2 text-sm text-gray-200 bg-slate-900 rounded-md pl-10 focus:outline-none focus:bg-slate-700 focus:text-gray-200 w-72"
+            className="py-2 text-sm dark:text-slate-100 dark:bg-slate-900 rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900"
             placeholder="Search..."
-            autoComplete=""
+            autocomplete="off"
           ></input>
         </div>
       </div>
       <div className="text-yellow-500 font-bold text-2xl">
-      {/*
+        {/*
         <Switch
           checked={enabled}
           onChange={setEnabled}
