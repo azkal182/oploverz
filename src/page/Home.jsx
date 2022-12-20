@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Requests from "../requests";
 import { Link } from "react-router-dom";
+import Footer from '../components/Footer'
 
 const Home = () => {
   const [popular, setPopular] = useState([]);
@@ -37,6 +38,7 @@ const Home = () => {
     );
   } else {
     return (
+      <>
       <div className="mx-3">
         <div className="w-full max-w-5xl md:mx-auto mt-8 shadow">
           <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-md overflow-hidden">
@@ -115,6 +117,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Footer />
+      </>
     );
   }
 };
