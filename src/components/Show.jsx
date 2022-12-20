@@ -61,7 +61,7 @@ const Show = () => {
   // console.log(params)
   if (isLoading) {
     return (
-      <div className="absolute inset-0 grid h-screen place-items-center">
+      <div className="absolute inset-0 grid h-screen  place-items-center">
         <div className="flex items-center">
           <div className="w-24 h-24 border-t-4 border-b-4 border-red-900 rounded-full animate-spin"></div>
         </div>
@@ -69,8 +69,13 @@ const Show = () => {
     );
   } else {
     return (
-      <div>
-        <div className="mt-5 w-full max-w-5xl mx-auto bg-slate-700">
+      <div className="mx-3">
+        <div className="text-center">
+          <h2 className="font-semibold text-red-500">
+            apabila video tidak tersedia Silahkan refresh atau ganti resolusi
+          </h2>
+        </div>
+        <div className="rounded overflow-hidden mt-2 w-full max-w-5xl mx-auto bg-slate-700">
           {" "}
           <iframe
             className="aspect-video"
@@ -84,10 +89,10 @@ const Show = () => {
             height="100%"
             allowFullScreen={true}
           ></iframe>
-          <div className="p-2 bg-slate-700">
+          <div className="p-2 bg-slate-700 z-100">
             <Listbox value={selected} onChange={setSelected}>
               <div className="relative mt-1 w-32">
-                <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-1 md:py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
                   <span className="block truncate">{selected.resolution}</span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                     <HiChevronUpDown
@@ -102,12 +107,12 @@ const Show = () => {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-slate-200 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                  <Listbox.Options className="absolute bottom-0 mb-9 md:mb-10 max-h-60 w-full overflow-auto rounded-md bg-slate-200 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                     {embed.map((person, personIdx) => (
                       <Listbox.Option
                         key={person.id}
                         className={({ active }) =>
-                          `relative cursor-default select-none py-2 px-3 ${
+                          `relative cursor-default select-none py-1 md:py-2 px-3 ${
                             active
                               ? "bg-amber-100 text-amber-900"
                               : "text-gray-900"
@@ -142,35 +147,34 @@ const Show = () => {
             </Listbox>
           </div>
         </div>
-        <div className="my-4 grid grid-cols-3 gap-x-1 mx-4 w-full max-w-5xl md:mx-auto">
+        <div className="my-4 grid grid-cols-3 gap-x-1 w-full max-w-5xl md:mx-auto">
           <Link to={`/show/${prev}`}>
             <button
               onClick={() => {
                 setIsLoading(true);
               }}
               disabled={!prev && true}
-              className="bg-slate-700 flex justify-center items-center text-white py-2 text-center w-full"
+              className="rounded-l bg-slate-700 flex justify-center items-center text-white py-2 text-center w-full"
             >
               <HiChevronLeft size={16} />
             </button>
           </Link>
-          <button
-            onClick={() => {setIsLoading(true)}}
-            className="bg-blue-600 text-white py-2 flex justify-center items-center text-center w-full"
-          >
-            <HiListBullet size={20} />
+          <button className="bg-blue-600 text-white py-2 flex justify-center items-center text-center w-full">
+            <HiListBullet size={16} />
           </button>
           <Link to={`/show/${next}`}>
             <button
-               onClick={() => {setIsLoading(true)}}
+              onClick={() => {
+                setIsLoading(true);
+              }}
               disabled={!next && true}
-              className="bg-slate-700 flex justify-center items-center text-white py-2 text-center w-full"
+              className="rounded-r bg-slate-700 flex justify-center items-center text-white py-2 text-center w-full"
             >
               <HiChevronRight size={16} />
             </button>
           </Link>
         </div>
-        <div className="p-4 mt-4 rounded bg-slate-700 w-full md:max-w-5xl md:mx-auto">
+        <div className="p-2 md:p-4 mt-4 rounded bg-slate-700 w-full md:max-w-5xl md:mx-auto">
           <h2 className="text-white w-full text-center">
             Download {params.episode.replaceAll("-", " ")}
           </h2>
@@ -189,7 +193,7 @@ const Show = () => {
                           <div className="bg-blue-600 w-14 text-center py-1 rounded">
                             {resolution.name}
                           </div>
-                          <div className="flex items-center divide-x gap-2">
+                          <div className="flex flex-wrap items-center divide-x gap-2">
                             {resolution.servers.map((server, i) => {
                               return (
                                 <div key={i} className="text-center pl-2">
