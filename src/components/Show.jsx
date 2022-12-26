@@ -62,7 +62,10 @@ const Show = () => {
     // console.log(params)
     if (isLoading) {
         return (
-            <div className='absolute inset-0 grid h-screen  place-items-center'>
+            <div
+                // className='absolute inset-0 grid h-screen bg-black  place-items-center'
+                className='grid h-screen place-items-center'
+            >
                 <div className='flex items-center'>
                     <div className='w-24 h-24 border-t-4 border-b-4 border-slate-900 dark:border-red-900 rounded-full animate-spin'></div>
                 </div>

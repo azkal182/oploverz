@@ -7,12 +7,12 @@ import { ThemeProvider } from './components/ThemeContext'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <ThemeProvider>
-            <body className='bg-slate-100 min-h-screen dark:bg-slate-900 transition-all font-inter antialiased '>
+        <body className='bg-slate-100 min-h-screen dark:bg-slate-900 transition-all font-inter antialiased '>
+            <ThemeProvider>
                 <Router>
                     <App />
                 </Router>
-            </body>
-        </ThemeProvider>
+            </ThemeProvider>
+        </body>
     </React.StrictMode>
 )
