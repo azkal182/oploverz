@@ -3,7 +3,7 @@ import axios from 'axios'
 import Requests from '../requests'
 import { Link } from 'react-router-dom'
 import { IoStarSharp } from 'react-icons/io5'
-
+import Footer from "../components/Footer";
 const Home = () => {
     const [popular, setPopular] = useState([])
     const [latest, setlatest] = useState([])
@@ -38,6 +38,7 @@ const Home = () => {
         )
     } else {
         return (
+            <>
             <div className='w-full max-w-5xl md:mx-auto'>
                 <div className='px-4 py-4 grid grid-cols-1 relative gap-y-4'>
                     <h2 className='font-semibold text-lg text-slate-900 dark:text-slate-100'>
@@ -98,6 +99,8 @@ const Home = () => {
                     })}
                 </div>
             </div>
+            <Footer />
+            </>
         )
     }
 }
