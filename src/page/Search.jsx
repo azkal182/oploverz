@@ -51,7 +51,7 @@ export default function Search() {
                       <div className="flex flex-column w-full relative">
                         <img
                           className="aspect-auto w-full object-cover h-full"
-                          src={anime.poster}
+                          src={anime.poster + '?resize=247,350'}
                           alt=""
                         />
                         <div
