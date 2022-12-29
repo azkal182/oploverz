@@ -19,7 +19,7 @@ const Detail = () => {
       setListEpisode(res.data.results.list_episode);
       setIsLoading(false);
     });
-  }, []);
+  }, [params]);
 
   if (isLoading) {
     return (
@@ -61,7 +61,7 @@ const Detail = () => {
             <div className="px-2 md:px-4 max-h-[500px] overflow-scroll overflow-x-hidden">
               {listEpisode.map((anime, index) => {
                 return (
-                  <Link to={`/show/${anime.id}`}>
+                  <Link key={index} to={`/show/${anime.id}`}>
                     <div
                       key={index}
                       className={`${

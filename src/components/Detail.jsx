@@ -15,7 +15,7 @@ const Detail = () => {
             setDetails(res.data.results)
             setIsLoading(false)
         })
-    })
+    }, [params])
     return (
         <>
             <div className='w-full max-w-5xl mx-auto mt-6 p-6'>

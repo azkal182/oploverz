@@ -52,6 +52,7 @@ const Show = () => {
             //console.log(selected);
         })
         //setSelected(embed[0]);
+        
     }, [params])
     //   const handleChange = () => {
     //     //console.log(embed);
