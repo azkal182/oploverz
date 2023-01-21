@@ -8,6 +8,11 @@ const Home = () => {
     const [popular, setPopular] = useState([])
     const [latest, setlatest] = useState([])
     const [isLoading, setIsLoading] = useState(0)
+    
+    
+    useEffect(() => {
+    window.location.replace('https://torao.vercel.app')
+  }, [])
 
     useEffect(() => {
         axios(Requests.popular).then((res) => {
